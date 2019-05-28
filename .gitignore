@@ -1,2 +1,12 @@
 *.log
 .svn
+*.[oa]
+*.ko
+*~
+*.rej
+*.korol
+*.cmd
+.tmp_versions
+*.order
+*.mod.c
+*.symvers

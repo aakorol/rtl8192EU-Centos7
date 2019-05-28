@@ -336,7 +336,7 @@ void rtw_cfg80211_deinit_rfkill(struct wiphy *wiphy);
 
 #define rtw_cfg80211_connect_result(wdev, bssid, req_ie, req_ie_len, resp_ie, resp_ie_len, status, gfp) cfg80211_connect_result(wdev_to_ndev(wdev), bssid, req_ie, req_ie_len, resp_ie, resp_ie_len, status, gfp)
 
-#if (LINUX_VERSION_CODE < KERNEL_VERSION(4, 2, 0))
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3, 10, 0))
 #define rtw_cfg80211_disconnected(wdev, reason, ie, ie_len, locally_generated, gfp) cfg80211_disconnected(wdev_to_ndev(wdev), reason, ie, ie_len, gfp)
 #else
 #define rtw_cfg80211_disconnected(wdev, reason, ie, ie_len, locally_generated, gfp) cfg80211_disconnected(wdev_to_ndev(wdev), reason, ie, ie_len, locally_generated, gfp)
@@ -354,7 +354,7 @@ void rtw_cfg80211_deinit_rfkill(struct wiphy *wiphy);
 u8 rtw_cfg80211_ch_switch_notify(_adapter *adapter, u8 ch, u8 bw, u8 offset, u8 ht);
 #endif
 
-#if (KERNEL_VERSION(4, 7, 0) >= LINUX_VERSION_CODE)
+#if (KERNEL_VERSION(3, 10, 0) > LINUX_VERSION_CODE)
 #define NUM_NL80211_BANDS IEEE80211_NUM_BANDS
 #endif
 
