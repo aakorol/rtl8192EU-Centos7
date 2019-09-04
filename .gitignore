@@ -10,3 +10,5 @@
 *.order
 *.mod.c
 *.symvers
+*.d
+*.tmp
